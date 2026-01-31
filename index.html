@@ -3,29 +3,119 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cendres Photos</title>
-  <meta name="description" content="Automotive and commercial photography." />
+
+  <title>Chris Endres Photography</title>
+  <meta name="description" content="Automotive and commercial photography. Minnesota and beyond." />
+
   <style>
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0b0b; color:#fff; }
-    .wrap { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding: 48px 20px; }
-    .card { max-width: 860px; width:100%; border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 28px; background: rgba(255,255,255,.04); }
-    h1 { margin: 0 0 10px; font-size: 40px; letter-spacing: .2px; }
-    p { margin: 0 0 18px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.86); }
-    .btns { display:flex; flex-wrap:wrap; gap: 12px; margin-top: 14px; }
-    a.btn { display:inline-block; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.7); text-decoration:none; color:#fff; }
-    a.btn.primary { background:#fff; color:#000; border-color:#fff; }
-    .fine { margin-top: 18px; font-size: 14px; color: rgba(255,255,255,.62); }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #fff;
+    }
+
+    /* Full-screen background image */
+    .bg{
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: url("assets/bg.png"); /* change to bg.jpg if needed */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Dark overlay for readability */
+    .overlay{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .card {
+      max-width: 860px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: 28px;
+      background: rgba(0,0,0,.40);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 80px rgba(0,0,0,.45);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 40px;
+      letter-spacing: .2px;
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.86);
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.7);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    a.btn.primary {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+      font-weight: 650;
+    }
+
+    .fine {
+      margin-top: 18px;
+      font-size: 14px;
+      color: rgba(255,255,255,.62);
+    }
+
+    /* Optional: make it look better on small screens */
+    @media (max-width: 700px){
+      h1 { font-size: 34px; }
+      .card { padding: 22px; }
+    }
   </style>
 </head>
+
 <body>
+  <div class="bg"></div>
+  <div class="overlay"></div>
+
   <div class="wrap">
     <div class="card">
-      <h1>Cendres Photos</h1>
+      <h1>Chris Endres Photography</h1>
       <p>Automotive and commercial photography. Site update in progress.</p>
+
       <div class="btns">
-        <a class="btn primary" href="mailto:christopher.p.endres@gmail.com">Email</a>
-        <a class="btn" href="#" onclick="alert('We will add your portfolio link next'); return false;">Portfolio</a>
+        <a class="btn primary" href="mailto:chris@cendresphotos.com">Contact</a>
+        <a class="btn" href="#" onclick="alert('Add your portfolio link next'); return false;">Portfolio</a>
       </div>
+
       <div class="fine">Apple Valley, Minnesota</div>
     </div>
   </div>
