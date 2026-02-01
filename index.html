@@ -9,10 +9,10 @@
 
   <style>
     :root{
-      --gold: rgba(217,179,106,0.80);
-      --goldMuted: rgba(217,179,106,0.55);
-      --goldLine: rgba(217,179,106,0.22);
-      --shadow: 0 2px 18px rgba(0,0,0,0.45);
+      --gold: rgba(217,179,106,0.86);
+      --goldMuted: rgba(217,179,106,0.62);
+      --goldLine: rgba(217,179,106,0.26);
+      --shadow: 0 2px 14px rgba(0,0,0,0.35);
     }
 
     html, body { height: 100%; }
@@ -25,26 +25,32 @@
       overflow-x:hidden;
     }
 
-    /* Full-screen background image */
+    /* Background image (scaled down to make logo smaller) */
     .bg{
       position: fixed;
       inset: 0;
       z-index: -3;
       background-image: url("assets/bg.png"); /* change to assets/bg.jpg if needed */
-      background-size: cover;
-      background-position: center;
       background-repeat: no-repeat;
+
+      /* This is the "75%" request */
+      background-size: 75% auto;
+
+      /* Keep it centered */
+      background-position: center;
+
+      /* Fill the rest with a matching dark tone */
+      background-color: #0b0710;
     }
 
-    /* Lighter wash so the logo stays visible */
+    /* Much lighter wash: just enough for legibility */
     .wash{
       position: fixed;
       inset: 0;
       z-index: -2;
       background:
-        radial-gradient(1100px 700px at 18% 18%, rgba(0,0,0,0.06), rgba(0,0,0,0.35) 70%),
-        radial-gradient(1100px 700px at 82% 82%, rgba(0,0,0,0.05), rgba(0,0,0,0.38) 70%),
-        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.34));
+        radial-gradient(1200px 800px at 50% 45%, rgba(0,0,0,0.00), rgba(0,0,0,0.18) 70%),
+        linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.16));
     }
 
     /* One elegant centered line pinned to bottom */
@@ -76,8 +82,8 @@
     }
 
     .contactlink:hover{
-      color: rgba(217,179,106,0.95);
-      border-bottom-color: rgba(217,179,106,0.45);
+      color: rgba(217,179,106,0.98);
+      border-bottom-color: rgba(217,179,106,0.52);
     }
 
     @media (max-width: 720px){
@@ -86,6 +92,11 @@
         padding: 0 16px;
         font-size: 12px;
         letter-spacing: .07em;
+      }
+
+      /* On phones, make the logo a bit bigger again */
+      .bg{
+        background-size: 92% auto;
       }
     }
   </style>
@@ -101,4 +112,3 @@
   </div>
 </body>
 </html>
-
