@@ -5,119 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Chris Endres Photography</title>
-  <meta name="description" content="Automotive and commercial photography. Minnesota and beyond." />
+  <meta name="description" content="Chris Endres Photography — Automotive, Commercial, Sports, Events." />
 
   <style>
-    body {
-      margin: 0;
+    :root{
+      --gold: rgba(217,179,106,0.80);
+      --goldMuted: rgba(217,179,106,0.55);
+      --goldLine: rgba(217,179,106,0.22);
+      --shadow: 0 2px 18px rgba(0,0,0,0.55);
+    }
+
+    html, body { height: 100%; }
+
+    body{
+      margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: #fff;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
     }
 
     /* Full-screen background image */
     .bg{
       position: fixed;
       inset: 0;
-      z-index: -2;
-      background-image: url("assets/bg.png"); /* change to bg.jpg if needed */
+      z-index: -3;
+      background-image: url("assets/bg.png"); /* change to assets/bg.jpg if needed */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* Dark overlay for readability */
-    .overlay{
+    /* Soft wash so text stays readable without a box */
+    .wash{
       position: fixed;
       inset: 0;
-      z-index: -1;
-      background: rgba(0,0,0,0.55);
+      z-index: -2;
+      background:
+        radial-gradient(1100px 700px at 18% 18%, rgba(0,0,0,0.18), rgba(0,0,0,0.62) 70%),
+        radial-gradient(1100px 700px at 82% 82%, rgba(0,0,0,0.15), rgba(0,0,0,0.66) 70%),
+        linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.58));
     }
 
-    .wrap {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 20px;
-    }
+    /* One elegant line pinned to bottom */
+    .footerline{
+      position: fixed;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
 
-    .card {
-      max-width: 860px;
-      width: 100%;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 18px;
-      padding: 28px;
-      background: rgba(0,0,0,.40);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 20px 80px rgba(0,0,0,.45);
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: 40px;
-      letter-spacing: .2px;
-    }
-
-    p {
-      margin: 0 0 18px;
-      font-size: 18px;
-      line-height: 1.55;
-      color: rgba(255,255,255,.86);
-    }
-
-    .btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    a.btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.7);
-      text-decoration: none;
-      color: #fff;
-    }
-
-    a.btn.primary {
-      background: #fff;
-      color: #000;
-      border-color: #fff;
-      font-weight: 650;
-    }
-
-    .fine {
-      margin-top: 18px;
       font-size: 14px;
-      color: rgba(255,255,255,.62);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      color: var(--goldMuted);
+      text-shadow: var(--shadow);
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    /* Optional: make it look better on small screens */
-    @media (max-width: 700px){
-      h1 { font-size: 34px; }
-      .card { padding: 22px; }
+    .contactlink{
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--goldLine);
+      padding-bottom: 1px;
+    }
+
+    .contactlink:hover{
+      color: rgba(217,179,106,0.95);
+      border-bottom-color: rgba(217,179,106,0.45);
+    }
+
+    /* Mobile spacing */
+    @media (max-width: 720px){
+      .footerline{
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        font-size: 12px;
+        letter-spacing: .07em;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="bg"></div>
-  <div class="overlay"></div>
+  <div class="wash"></div>
 
-  <div class="wrap">
-    <div class="card">
-      <h1>Chris Endres Photography</h1>
-      <p>Automotive and commercial photography. Site update in progress.</p>
-
-      <div class="btns">
-        <a class="btn primary" href="mailto:chris@cendresphotos.com">Contact</a>
-        <a class="btn" href="#" onclick="alert('Add your portfolio link next'); return false;">Portfolio</a>
-      </div>
-
-      <div class="fine">Apple Valley, Minnesota</div>
-    </div>
+  <div class="footerline">
+    Chris Endres Photography · Automotive · Commercial · Sports · Events ·
+    <a class="contactlink" href="mailto:chris@cendresphotos.com">Contact</a>
   </div>
 </body>
 </html>
+
