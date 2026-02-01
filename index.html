@@ -20,11 +20,12 @@
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:#000;
+      background:#000; /* pure black page */
       color:#fff;
       overflow-x:hidden;
     }
 
+    /* Background image scaled back up (previous edit) */
     .bg{
       position: fixed;
       inset: 0;
@@ -33,21 +34,17 @@
       background-image: url("assets/bg.png"); /* change if needed */
       background-repeat: no-repeat;
 
-      background-size: 50% auto;
+      /* restore size (was 50%) */
+      background-size: 75% auto;
+
       background-position: center;
-
-      background-color: #000;
+      background-color: #000; /* empty space is black */
     }
 
-    .wash{
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(1200px 800px at 50% 45%, rgba(0,0,0,0.00), rgba(0,0,0,0.08) 70%),
-        linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06));
-    }
+    /* No wash at all so black stays black */
+    .wash{ display:none; }
 
+    /* Footer centered, 150% size, lifted up */
     .footerline{
       position: fixed;
       left: 0;
@@ -56,7 +53,7 @@
       padding: 0 24px;
 
       text-align: center;
-      font-size: 21px; /* 150% of 14px */
+      font-size: 21px;
       letter-spacing: .08em;
       text-transform: uppercase;
 
@@ -66,7 +63,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      pointer-events: auto;
     }
 
     .contactlink{
@@ -85,18 +81,18 @@
       .footerline{
         bottom: 32px;
         padding: 0 16px;
-        font-size: 18px; /* 150% of 12px */
+        font-size: 18px;
         letter-spacing: .07em;
       }
 
-      .bg{ background-size: 80% auto; }
+      /* keep logo readable on phones */
+      .bg{ background-size: 92% auto; }
     }
   </style>
 </head>
 
 <body>
   <div class="bg"></div>
-  <div class="wash"></div>
 
   <div class="footerline">
     Chris Endres Photography · Automotive · Commercial · Sports · Events ·
